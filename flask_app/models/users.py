@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class User():
 
@@ -15,7 +15,7 @@ class User():
     def get_all(cls):
         query = "SELECT * FROM users;"
         results = connectToMySQL('users_schema').query_db(query)
-        return results
+        return cls(results)
 
     @classmethod
     def create_user(cls, data):
@@ -36,7 +36,7 @@ class User():
         # return the array of result
         results = connectToMySQL('users_schema').query_db(query, data)
 
-        return results[0]
+        return User(results[0])
 
     @classmethod
     def edit_theuser(clas, data):

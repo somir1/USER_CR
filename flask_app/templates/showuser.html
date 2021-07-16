@@ -13,10 +13,10 @@
 <body>
      <div class="con">
          <div class="main">
-             <h1>User: {{user['id']}}</h1>
-             <h2>Full name: {{user['first_name']}} {{user['last_name']}}</h2>
-             <h2>Email: {{user['email']}}</h2>
-             <h2>Created on: {{user['created_at']}}</h2>
+             <h1>User: {{user.id}}</h1>
+             <h2>Full name: {{user.first_name}} {{user.last_name}}</h2>
+             <h2>Email: {{user.email}}</h2>
+             <h2>Created on: {{user.created_at}}</h2>
              <a href="/">Home</a>
              <a href="/edituser/{{user.id}}/edit">Edit</a>
              <a href="/users/{{user.id}}/delete">Delete</a>
