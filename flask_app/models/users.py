@@ -15,7 +15,7 @@ class User():
     def get_all(cls):
         query = "SELECT * FROM users;"
         results = connectToMySQL('users_schema').query_db(query)
-        return cls(results)
+        return results
 
     @classmethod
     def create_user(cls, data):
